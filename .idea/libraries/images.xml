@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="images">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Gardan/build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/assets/images/onboarding_3.png.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gardan/build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/assets/images/logo.png.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gardan/build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/assets/images/onboarding_1.png.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gardan/build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/assets/images/onboarding_2.png.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

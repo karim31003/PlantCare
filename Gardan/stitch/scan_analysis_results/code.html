@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Gardener - Scan Analysis Results</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a4a451", // Olive Green
+                        "secondary": "#6CA651", // Fresh Green
+                        "background-light": "#f7f7f6",
+                        "background-dark": "#1c1c16",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between shrink-0 z-10">
+<button class="text-slate-900 dark:text-slate-100 hover:bg-primary/10 rounded-full p-2 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">
+            Scan Analysis Results
+        </h2>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<!-- Hero Image Section -->
+<div class="px-4 py-2">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-slate-200 dark:bg-slate-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of a green plant leaf showing brown spots and signs of disease" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpDFdaOEgHzKOz53R0g7xz3BKcZIJySh5GzrxI8DAEZMVopFeGOjr35wh-pTxDzrFlCCw1Chh6Fy7Q6O432mp9poyIs824tEzoEsGJWnhSpXiFw2g5lb67gfiUba94NkvGkZ9xope2Khkn-Z-9U4xnSqEJLsXjRk0ppg7EnuAYCoR_sbja4XHE5h7KhF_-YcC6Wf1_Uudn8ZMM37W5QAKGOM0WXAOpvCkZC61tTInd9fxHMdcr6eIklGxC7t2yPz-vy6q3RtA1Hxs');">
+</div>
+<!-- Overlay Badge -->
+<div class="absolute top-4 right-4 bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-100 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">warning</span>
+                    Attention Needed
+                </div>
+</div>
+</div>
+<!-- Diagnosis Card -->
+<div class="px-4 -mt-6 relative z-10">
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-[0_4px_20px_-12px_rgba(0,0,0,0.1)] border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-primary text-sm font-semibold mb-1 uppercase tracking-wider">Detected Issue</p>
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">Leaf Spot</h1>
+</div>
+<!-- Confidence Ring (Simulated with CSS Conic Gradient) -->
+<div class="flex flex-col items-center">
+<div class="relative w-14 h-14 flex items-center justify-center rounded-full" style="background: conic-gradient(var(--tw-colors-primary) 98%, #e2e8f0 0);">
+<div class="absolute w-11 h-11 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center">
+<span class="text-xs font-bold text-slate-900 dark:text-white">98%</span>
+</div>
+</div>
+<span class="text-[10px] text-slate-500 mt-1 font-medium">Confidence</span>
+</div>
+</div>
+<hr class="border-slate-100 dark:border-slate-700 mb-4"/>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-xl">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-lg">ecg_heart</span>
+<span class="text-xs font-medium text-slate-500">Health</span>
+</div>
+<p class="font-bold text-slate-900 dark:text-white">Critical</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-xl">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-lg">spa</span>
+<span class="text-xs font-medium text-slate-500">Plant Type</span>
+</div>
+<p class="font-bold text-slate-900 dark:text-white">Monstera</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Treatment Recommendations -->
+<div class="px-6 mt-6 mb-8">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold flex items-center gap-2 mb-4">
+<span class="bg-primary/20 text-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">healing</span>
+</span>
+                Treatment Plan
+            </h3>
+<ul class="space-y-4 relative">
+<!-- Vertical connecting line -->
+<div class="absolute left-[11px] top-4 bottom-4 w-0.5 bg-slate-200 dark:bg-slate-700 -z-10"></div>
+<li class="flex items-start gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm mt-0.5">
+<span class="text-xs font-bold">1</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white mb-0.5">Isolate the plant</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Move this plant away from others immediately to prevent the fungus from spreading.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm mt-0.5">
+<span class="text-xs font-bold">2</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white mb-0.5">Remove infected leaves</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Snip off the leaves with spots using sterilized scissors. Dispose of them carefully.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm mt-0.5">
+<span class="text-xs font-bold">3</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white mb-0.5">Adjust watering</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Avoid getting water on the leaves. Water directly at the soil base to keep foliage dry.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm mt-0.5">
+<span class="text-xs font-bold">4</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white mb-0.5">Apply Fungicide</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">If symptoms persist, use a copper-based fungicide or neem oil solution.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Spacer for sticky footer -->
+<div class="h-8"></div>
+</main>
+<!-- Sticky Action Footer -->
+<footer class="bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 p-4 fixed bottom-0 w-full z-50">
+<div class="flex flex-col gap-3 max-w-md mx-auto w-full">
+<button class="w-full bg-secondary hover:bg-secondary/90 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-lg shadow-secondary/20">
+<span class="material-symbols-outlined">water_drop</span>
+                Set Water Reminder
+            </button>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add_circle</span>
+                Add to My Garden
+            </button>
+</div>
+</footer>
+</body></html>

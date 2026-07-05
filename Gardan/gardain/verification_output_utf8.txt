@@ -1,0 +1,29 @@
+﻿Analyzing gardain...                                            
+
+warning - The value of the field '_labels' isn't used - lib\core\services\ai_service.dart:6:17 - unused_field
+   info - Don't invoke 'print' in production code - lib\core\services\ai_service.dart:13:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\core\services\ai_service.dart:15:7 - avoid_print
+  error - The class 'gsi.GoogleSignIn' doesn't have an unnamed constructor - lib\features\auth\presentation\login_screen.dart:44:45 - new_with_undefined_constructor_default
+  error - The method 'signIn' isn't defined for the type 'GoogleSignIn' - lib\features\auth\presentation\login_screen.dart:47:45 - undefined_method
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\presentation\home_screen.dart:123:51 - deprecated_member_use
+
+flutter : 6 issues 
+found. (ran in 6.6s)
+At line:1 char:1
++ flutter analyze 
+--no-pub > verificati
+on_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (6 issue   
+ s found. (ran in    
+ 6.6s):String) [    
+], RemoteExcepti    
+on
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Watering Alerts - My Gardener</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#a4a451", // Olive green
+              "primary-dark": "#8e8e45",
+              "lime-accent": "#BBCB2E", // Requested light lime
+              "background-light": "#f7f7f6",
+              "background-dark": "#1c1c16",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2c2c24",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"],
+              "sans": ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem", 
+              "lg": "0.75rem", 
+              "xl": "1rem", 
+              "2xl": "1.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-lime-accent selection:text-white">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10 px-4 pt-12 pb-4">
+<div class="flex items-center justify-between">
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Watering Alerts</h1>
+<button class="p-2 rounded-full text-slate-500 hover:bg-primary/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="mt-4 flex p-1 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+<button class="flex-1 py-2 px-4 rounded-lg bg-primary text-white shadow-md text-sm font-semibold transition-all">
+                Upcoming
+            </button>
+<button class="flex-1 py-2 px-4 rounded-lg text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-slate-200 text-sm font-medium transition-all">
+                Past
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-4 py-6 pb-32 space-y-8">
+<!-- Section: Today -->
+<section>
+<h2 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 px-1 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-lime-accent"></span>
+                Today
+            </h2>
+<div class="space-y-3">
+<!-- Alert Card 1 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-sm hover:shadow-md border border-primary/5 transition-all flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-slate-100 dark:bg-slate-800 bg-cover bg-center overflow-hidden" data-alt="Close up of Monstera leaf" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOz7BRBT0DKO481IlRPCe7UlmA6qGLDCiIKOYH7OPZ0CnzU6lbwif-UXbwoBIzP0oEtcsY6p43QolAMazoVEndV-VtsM1CuackyIgbDFyqHRTWheCdjc1B1vxhqgV1qaZn_TeVQYtKdACokrOPzCvciYeLPKR585FMV7wTvmBo2h8hTmz8Zk1cKWkt4dgIrY-aR9fJLB0wdEUcVEHkhMQ4C0hqe5qGA-hyZ9fQYPAuQ-mbU1-yEg_7QwBg8Twka7qhhDPM35-ptBU');">
+</div>
+<div class="absolute -bottom-1 -right-1 bg-lime-accent text-white p-1 rounded-full border-2 border-surface-light dark:border-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] leading-none">water_drop</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 truncate">Monstera Deliciosa</h3>
+<p class="text-xs font-medium text-primary mt-0.5 uppercase tracking-wide">Water deeply</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                            9:00 AM
+                        </p>
+</div>
+<div class="shrink-0 pr-1">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-lime-accent"></div>
+</label>
+</div>
+</div>
+<!-- Alert Card 2 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-sm hover:shadow-md border border-primary/5 transition-all flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-slate-100 dark:bg-slate-800 bg-cover bg-center overflow-hidden" data-alt="Fiddle leaf fig plant leaves" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDM0lixYS1lcZeXEML00m4lvsb8uR1LOx43y48ZggAjFq3m0fmjA9Gj5wFk0MPeKGE1afazkaBo_jZLbY_5pD6D8unYy4QsJlOjApH8avDcXI1uL9qFR7axv6g-mq3mz0znXJEjxvfEazNdBdqy8WNSkSnc6Fn7WwUtApqGIXpwrzALvHaf_h0L3zgFasTy9no7OWXSmfmJUqsdaVLb7CxDdg-NZfbN4_MFtV3XaH22S9NmG2Noj_EFiTv4uOiC88nMIsg8ifxkDu0');">
+</div>
+<div class="absolute -bottom-1 -right-1 bg-blue-400 text-white p-1 rounded-full border-2 border-surface-light dark:border-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] leading-none">opacity</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 truncate">Fiddle Leaf Fig</h3>
+<p class="text-xs font-medium text-blue-500 mt-0.5 uppercase tracking-wide">Mist leaves</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                            2:00 PM
+                        </p>
+</div>
+<div class="shrink-0 pr-1">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-lime-accent"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Tomorrow -->
+<section>
+<h2 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 px-1 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+                Tomorrow
+            </h2>
+<div class="space-y-3">
+<!-- Alert Card 3 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-sm hover:shadow-md border border-primary/5 transition-all flex items-center gap-4 opacity-75 hover:opacity-100">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-slate-100 dark:bg-slate-800 bg-cover bg-center overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Small succulent in a pot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArv7L5aAMC9DH94nMos2srla3OlSliQKMGj2eMpADaD4wvy4EQviaZE53-qjLQZZWSuND2uie70nPXxYYqgeue6oUx_5eYVrvIF9t03E1_M86NWhDNekVFmgptHeDZ4pbbz3T0xh0yL7xi3yuS7NxAbE91bnZzSrQYFzWAeMperWKaJqodCGMRPAJupVABSNUksxdTt_jdP0E1N0gi6-v1Yp3EeAGtciXRFCLFEfZyw_Ho5uxqOiVFi3dUM2CNTedZUDtkcJGEmJg');">
+</div>
+<div class="absolute -bottom-1 -right-1 bg-amber-400 text-white p-1 rounded-full border-2 border-surface-light dark:border-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] leading-none">psychiatry</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 truncate">Succulent Mix</h3>
+<p class="text-xs font-medium text-amber-600 dark:text-amber-500 mt-0.5 uppercase tracking-wide">Check soil</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                            Tomorrow
+                        </p>
+</div>
+<div class="shrink-0 pr-1">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-lime-accent"></div>
+</label>
+</div>
+</div>
+<!-- Alert Card 4 -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-2xl p-3 shadow-sm hover:shadow-md border border-primary/5 transition-all flex items-center gap-4 opacity-75 hover:opacity-100">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-slate-100 dark:bg-slate-800 bg-cover bg-center overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Red Anthurium flower" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6VP__SI7pY760G2M-CmR8m3gxl1phpzs3Jj9yEiy87-S-U0yt5bDCBpVvmckjjSD0LC1jONVPATO8k4icZ2GubMyTZjT3TfXBWmPU2uChjunIlmUE74w3IML8QVV_iNywSqhqOToKuAQxoTe4tCe1Lgd8eXT_fZ7BZ04k8B0Dz5dAWhF8pCFC7EkV7o2D5o5EuG0h6BpImLe3QTLo26lBxaFX8D4WWA2QSV3XLQPe3ew3uqcs_6JM9-1SmzgGSgR-rcEtgZylatQ');">
+</div>
+<div class="absolute -bottom-1 -right-1 bg-lime-accent text-white p-1 rounded-full border-2 border-surface-light dark:border-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] leading-none">water_drop</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 truncate">Anthurium</h3>
+<p class="text-xs font-medium text-primary mt-0.5 uppercase tracking-wide">Water lightly</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                            Tomorrow
+                        </p>
+</div>
+<div class="shrink-0 pr-1">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-lime-accent"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button Area (Sticky Bottom) -->
+<div class="fixed bottom-[88px] left-0 right-0 p-4 bg-gradient-to-t from-background-light via-background-light/90 to-transparent dark:from-background-dark dark:via-background-dark/90 pointer-events-none flex justify-center z-10">
+<button class="pointer-events-auto bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-primary/20 flex items-center gap-2 transform transition-all active:scale-95 w-full max-w-sm justify-center">
+<span class="material-symbols-outlined">add_circle</span>
+            Schedule Custom Reminder
+        </button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark border-t border-primary/10 px-6 py-3 pb-6 flex justify-between items-center z-20">
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">yard</span>
+<span class="text-[10px] font-medium">My Garden</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary transition-colors group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform fill-current">notifications</span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
+</div>
+<span class="text-[10px] font-medium">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">qr_code_scanner</span>
+<span class="text-[10px] font-medium">Scan</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">forum</span>
+<span class="text-[10px] font-medium">Community</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

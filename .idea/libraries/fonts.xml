@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="fonts">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Gardan/build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Solid-900.otf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gardan/build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Brands-Regular-400.otf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gardan/build/app/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Regular-400.otf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="feature-tflite_flutter2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Gardan/linux/flutter/ephemeral/.plugin_symlinks/tflite_flutter/android/build/intermediates/merged_java_res/debug/mergeDebugJavaResource/feature-tflite_flutter.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

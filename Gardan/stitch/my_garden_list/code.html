@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Garden List - My Gardener</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#a4a451",
+                "background-light": "#f7f7f6",
+                "background-dark": "#1c1c16",
+                },
+                fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem", 
+                    "lg": "0.5rem", 
+                    "xl": "0.75rem", 
+                    "2xl": "1rem",
+                    "3xl": "1.5rem",
+                    "full": "9999px"
+                },
+            },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-slate-100 min-h-screen relative pb-24">
+<!-- Header Section -->
+<header class="sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md pt-12 pb-2 px-6 border-b border-primary/10 dark:border-primary/20">
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="text-sm font-medium text-primary dark:text-primary mb-0.5 uppercase tracking-wide">My Gardener</p>
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white leading-tight">My Garden</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white dark:border-slate-700 shadow-sm">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUkNjHyNkMVZm1Z8qVcj3pFULzu8ctaGPg6qJ47vOgBHhvPjssKYlu9LfwpHBS91m9jDDT31UoKwRkGj0bH4aj3qjKG4LlwsP5J88TjS6IefleEOH43KX6HEg-Vtuj2SKclZk3k_R7z01apbsoKQsOUg6qnCa2lyht3VoSCvi9FMdyu6l3jtC-zt7XSnpVEj0mD7yuNXhJdKmhuHFi6vwWF6S_pq7w8sCLDuA-Hnw2fvkg-Zy76mrSSuCjFc4EjGdggLPMCvAYlkw"/>
+</div>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2 -mx-6 px-6">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-sm font-medium whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[18px]">yard</span>
+                All Plants
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-blue-400">water_drop</span>
+                Needs Water
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-green-500">check_circle</span>
+                Healthy
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-sm font-medium whitespace-nowrap hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-amber-500">healing</span>
+                Sick
+            </button>
+</div>
+</header>
+<!-- Main Content: Plant Grid -->
+<main class="px-4 pt-4 pb-24">
+<div class="grid grid-cols-2 gap-4">
+<!-- Plant Card 1 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 transition-all hover:shadow-md hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
+<img alt="Fiddle Leaf Fig plant" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Green fiddle leaf fig plant in a pot indoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcQ8lmcp-xFINj2yibVajlADWYjicg07o6ZhM078a3KdLtAOEQVLpmCJ2oq14WGrVkMd1SI2OQ27TUz5rOABrZkrX2ugjrpVxhuFbd5jzJE60ql2quca3E7ORNMbTDj2mGvgisJL2ufY5zRtknsg-9LvFeAzLY2hVQ37xy1v2cIbtp5OahEOYViPxvJ50PD69nuReM0mLYTx0n2GBHVG3kpKwLk-NHdWNqb80grITX_r5wFi-9bmeTcD2m2ED0ZrbuWhBfQ6XCfYQ"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            Healthy
+                        </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Fiddle Leaf Fig</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 italic mb-3">Ficus lyrata</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[20px] fill-1">water_drop</span>
+<span class="text-sm font-semibold">2 days</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-300 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Plant Card 2 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 transition-all hover:shadow-md hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
+<img alt="Monstera plant" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Monstera deliciosa leaf close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCruPch8dXB6_6Y8oThWYrJbRWiB-q9S_iI3SmiWdkkRNWDqm3AIjUQGqbOrlzlbIG0tq7coBdP20kSJrTH38GqOs8rW-WiGomvcy9ZfDszAR8NHi_H_7Un_73ODcTh3-Qa8_XhQwEjxeF-SymPR_M9Eq0FVL1RI4D7-O8Mpecpre2GZ2PH0n0i_bvg3TMl4IeoGmMDZcNrj9scvt6mxTFBO-QFTsyo9QrMc5tZey2_Fst9bhy8ljVnnvs3EzMwdKWIAl1PztdF8nE"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-xs font-bold backdrop-blur-sm">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                            Action
+                        </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Monstera</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 italic mb-3">Monstera deliciosa</p>
+<div class="mt-auto flex items-center justify-between w-full">
+<div class="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
+<span class="material-symbols-outlined text-[20px] fill-1">water_drop</span>
+<span class="text-sm font-bold">Today!</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-300 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Plant Card 3 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 transition-all hover:shadow-md hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
+<img alt="Snake Plant" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Snake plant in a white pot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMlHqfnkzsb6ohV0Q333Wj4iF8m-0-FaeHCzCle2j8vQEiMfHug_Bk876K-wxjVCgCpLeGr627Y-Hp3lVDNYsK4vY72mR-wFIX7P-I51w89OlVtw9F4SFdMSzyfAQ76XOlc54Q0wqLMwkKiRr9bD3gCi6Lxehi4TQJc4GxsqjxbaFYXLzkF3pxze7NLb9IE9RAU5kDozI0z_DBRWzlTTYagDxb1D_dUxP4fVvD9T8sq-sX2C-H2Wq-NRbUhLVo1QI36RBmRgz-wog"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            Healthy
+                        </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Snake Plant</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 italic mb-3">Sansevieria</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[20px] fill-1">water_drop</span>
+<span class="text-sm font-semibold">5 days</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-300 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Plant Card 4 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 transition-all hover:shadow-md hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
+<img alt="Peace Lily" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Peace lily plant with white flowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Nt3ksZScOIoi6C77bMbWE2cM2vfPAEoiJSmm9vmOlCEImN40aU6irSbhtE188s9nkgmyu88yZU5uHl35SaROA0b57vDmssbdjtEIi9CtUj5D-r2UKDcDyccj4f4c2_zHnjt_zTAoAnnYEVlXtuKin6uwZV11W0_gNMa0uZvGyWdwCJaXy8mFrbBf1RWfarL6UwtTrKGXNcSay1ODqVE7jsTH8Q1cJ51u84GzMMC7H69CegHrjcXBRG1-SQNgm8WNfP6-j-UMWYI"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                            Healthy
+                        </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Peace Lily</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 italic mb-3">Spathiphyllum</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[20px] fill-1">water_drop</span>
+<span class="text-sm font-semibold">1 day</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-300 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Plant Card 5 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 transition-all hover:shadow-md hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-900">
+<img alt="Aloe Vera" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Aloe vera plant leaves close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD83TVIs4nWUy4h7GdiATgycDNDaJcRbh4651lh7UmC4ucSEmB8Ld1w5EDvKiYTuM8QifK3_pzAZ4oTR7bngnPVAUc52pVti793EObVTBzhlustCzUNOINAdqoazCk4xHd8LgBUPf1EdWqH62DmEO8w5KWT9sk6LKDboW2GF59M-JBAtieSOrS__rNHf2TNshi8l4HpucHpSkCBSPTzB5fYLN2dswpIaG37t5ehcpdoViGLn_IqWiaJSA2OFxWC9LyfMxs64eH--dA"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 text-xs font-bold backdrop-blur-sm">
+<span class="material-symbols-outlined text-[14px]">healing</span>
+                            Sick
+                        </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Aloe Vera</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 italic mb-3">Aloe barbadensis</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[20px] fill-1">water_drop</span>
+<span class="text-sm font-semibold">8 days</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-300 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Plant Card (Placeholder) -->
+<button class="group flex flex-col items-center justify-center bg-background-light dark:bg-slate-800/50 rounded-2xl aspect-[4/5] border-2 border-dashed border-slate-300 dark:border-slate-600 hover:border-primary dark:hover:border-primary hover:bg-primary/5 transition-all">
+<div class="w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px] text-slate-400 dark:text-slate-300 group-hover:text-primary">add</span>
+</div>
+<span class="text-sm font-bold text-slate-500 dark:text-slate-400 group-hover:text-primary">Add Plant</span>
+</button>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-6 z-20">
+<button class="group h-14 w-14 flex items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/40 hover:scale-105 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[32px] group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-white/90 dark:bg-background-dark/95 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 px-6 pb-6 pt-3 flex justify-between items-center z-30">
+<a class="flex flex-1 flex-col items-center gap-1 group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[28px] text-primary transition-colors">potted_plant</span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-wide">My Garden</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-[28px] text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 transition-colors">center_focus_weak</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 tracking-wide">Diagnose</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-[28px] text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 transition-colors">account_circle</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>
