@@ -8,6 +8,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../core/theme/app_theme.dart';
 import '../../../presentation/providers/orders_provider.dart';
+import '../../../presentation/providers/scans_provider.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -20,10 +21,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    // Trigger fade-in animation
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        // Animation will be handled by the AnimatedOpacity in build
+        context.read<OrdersProvider>().fetchOrders();
+        context.read<ScansProvider>().fetchScans();
       }
     });
   }
@@ -271,7 +272,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildModernStatsRow(BuildContext context) {
     final ordersProvider = context.watch<OrdersProvider>();
+    final scansProvider = context.watch<ScansProvider>();
     final orderCount = ordersProvider.orders.length;
+    final scanCount = scansProvider.scans.length;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -301,7 +304,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           _buildModernStat(
             context: context,
             icon: Icons.document_scanner_rounded,
-            value: '0',
+            value: scanCount.toString(),
             label: 'Scans',
             color: const Color(0xFFCE93D8),
             onTap: () => context.go('/scan'),
